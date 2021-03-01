@@ -5,7 +5,7 @@
 * @created 2021-02-13T19:50:26.674Z+08:00
 * @copyright None 
 * None
-* @last-modified 2021-02-13T20:38:14.013Z+08:00
+* @last-modified 2021-02-25T11:21:09.841Z+08:00
 */
 
 #define OK 1
@@ -34,7 +34,7 @@ Status ListDelete(SqList *L, int i, ElemType *e)
         return ERROR
     }
 
-    *e = L - data[i-1];
+    *e = L->data[i-1];
 
     if (i < L->length)
     {
