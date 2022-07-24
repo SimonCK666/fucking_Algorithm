@@ -1,0 +1,36 @@
+package class01TimeSort;
+
+import java.util.Arrays;
+
+public class SelectionSort {
+	
+	/**
+	 * 选择排序：从数组中找出最小值，放到第一位，然后找 N - 1 个数字的最小值放到第二位 。。。
+	 * @param arr
+	 */
+	public static void selectionSort(int[] arr) {
+		// 如果数组为空或者数组长度小于 2，则不需要排序
+		if (arr == null || arr.length < 2) {
+			return;
+		}
+		for (int i = 0; i < arr.length - 1; i++) {	// i ~ N - 1
+			// 选择最小值在哪个位置
+			int minIndex = i;
+			for (int j = i + 1; j < arr.length; j++) {	// i ~ N - 1 上找最小值的下标
+				minIndex = arr[j] < arr[minIndex] ? j : minIndex;
+			}
+			swap(arr, i, minIndex);
+		}
+	}
+	
+	public static void swap(int[] arr, int i, int j) {
+		int tmp = arr[i];
+		arr[i] = arr[j];
+		arr[j] = tmp;
+	}
+	
+	// for test
+	public static void comparator(int[] arr) {
+		Arrays.sort(arr);
+	}
+}
